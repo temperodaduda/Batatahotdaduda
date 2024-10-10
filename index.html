@@ -1,246 +1,257 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Loja de vendas online com produtos variados.">
-    <title>Loja Online</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Batatas Gourmet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ff7f50, #ffcc00);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .produto {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .produto:hover {
+            transform: scale(1.05);
+        }
+
+        .preco {
+            font-size: 1.5em;
+            color: #ff4500;
+            margin: 10px 0;
+        }
+
+        .adicionar-btn {
+            background-color: #32cd32;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .adicionar-btn:hover {
+            background-color: #28a745;
+        }
+
+        .carrinho {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .carrinho h2 {
+            text-align: center;
+        }
+
+        .form-entrega {
+            display: none;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        .form-entrega input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-entrega button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .form-entrega button:hover {
+            background-color: #1c86ee;
+        }
+
+        .total {
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <!-- Cabeçalho com logo e menu -->
-    <header>
-        <div class="logo">
-            <h1>Tempero da Duda</h1> <!-- Nome alterado para Tempero da Duda -->
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>Bem-vindo ao Mundo das Batatas!</h1>
+    <div class="mensagem">
+        Informe forma de pagamento no campo de troco!
+    </div>
+    <!-- O restante do conteúdo da página -->
+<body>
 
-    <!-- Banner de Promoção -->
-    <section id="home" class="banner">
-        <h2>Promoções Imperdíveis!</h2>
-        <p>Descontos em todos os produtos, confira!</p>
-    </section>
-
-    <!-- Catálogo de Produtos -->
-    <section id="produtos" class="catalogo">
-        <h2>Nossos Produtos</h2>
-        <div class="produtos-lista">
-    <!-- Produto: Batata Brasileira -->
-    <div class="produtos-lista">
-    <!-- Produto: Batata Brasileira -->
-    <div class="produto-item">
-        <div class="produto-balao">
+    <h1>Batatas Gourmet</h1>
+    <div class="menu">
+        <div class="produto">
             <h3>Batata Brasileira</h3>
-            <p>R$ 17,99</p>
-            <p>Frango, queijo, azeitona, milho, catupiry</p>
-            <button onclick="adicionarAoCarrinho('Batata Brasileira', 17.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 20,00</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Brasileira', 20.00)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Amazonas -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Amazonas</h3>
-            <p>R$ 14,99</p>
-            <p>Calabresa, queijo, cheddar</p>
-            <button onclick="adicionarAoCarrinho('Batata Amazonas', 14.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 17,00</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Amazonas', 17.00)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Nordestina -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Nordestina</h3>
-            <p>R$ 20,99</p>
-            <p>Carne moída, queijo, catupiry</p>
-            <button onclick="adicionarAoCarrinho('Batata Nordestina', 20.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 20,99</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Nordestina', 20.99)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Capixaba -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Capixaba</h3>
-            <p>R$ 15,99</p>
-            <p>Queijo, presunto, cheddar, catupiry</p>
-            <button onclick="adicionarAoCarrinho('Batata Capixaba', 15.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 17,00</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Capixaba', 17.00)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Carioca -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Carioca</h3>
-            <p>R$ 22,99</p>
-            <p>Estrogonofe, queijo e batata palha</p>
-            <button onclick="adicionarAoCarrinho('Batata Carioca', 22.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 22,99</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Carioca', 22.99)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Paulista -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Paulista</h3>
-            <p>R$ 27,99</p>
-            <p>Estrogonofe de camarão, queijo, batata palha</p>
-            <button onclick="adicionarAoCarrinho('Batata Paulista', 27.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 28,00</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Paulista', 28.00)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Gaúcha -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Gaúcha</h3>
-            <p>R$ 25,99</p>
-            <p>Costela desfiada, queijo, cheddar, catupiry</p>
-            <button onclick="adicionarAoCarrinho('Batata Gaúcha', 25.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 28,00</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Gaúcha', 28.00)">Adicionar</button>
         </div>
-    </div>
-    <!-- Produto: Batata Moda Casa -->
-    <div class="produto-item">
-        <div class="produto-balao">
+        <div class="produto">
             <h3>Batata Moda Casa</h3>
-            <p>R$ 29,99</p>
-            <p>Frango, queijo, bacon, calabresa, cheddar, catupiry</p>
-            <button onclick="adicionarAoCarrinho('Batata Moda Casa', 29.99)">Adicionar ao Carrinho</button>
+            <p class="preco">R$ 29,99</p>
+            <button class="adicionar-btn" onclick="adicionarAoCarrinho('Batata Moda Casa', 29.99)">Adicionar</button>
         </div>
     </div>
-    <!-- Produto: Feijão Tropeiro -->
-    <div class="produto-item">
-        <div class="produto-balao">
-            <h3>Feijão Tropeiro</h3>
-            <p>P: R$ 25,00</p>
-            <p>G: R$ 30,00</p>
-            <button onclick="adicionarAoCarrinho('Feijão Tropeiro P', 25)">Adicionar P ao Carrinho</button>
-            <button onclick="adicionarAoCarrinho('Feijão Tropeiro G', 30)">Adicionar G ao Carrinho</button>
-        </div>
+
+    <div class="carrinho">
+        <h2>Carrinho</h2>
+        <div id="lista-carrinho"></div>
+        <div class="total">Total: R$ <span id="total-carrinho">0.00</span></div>
+        <button onclick="finalizarCompra()">Finalizar Pedido</button>
     </div>
-</div>
-    </section>
 
-    <!-- Carrinho de Compras -->
-    <section id="carrinho" class="carrinho">
-        <h2>Seu Carrinho</h2>
-        <ul id="lista-carrinho"></ul>
-        <p>Total: R$<span id="total-carrinho">0,00</span></p>
-        <p>Frete: R$<span id="frete">4,00</span></p>
-        <p>Valor Final: R$<span id="valor-final">4,00</span></p>
-        <button onclick="finalizarCompra()">Finalizar Compra</button>
-    </section>
-
-    <!-- Formulário de Entrega -->
-    <section id="form-entrega" class="form-entrega" style="display: none;">
+    <div id="form-entrega" class="form-entrega">
         <h2>Formulário de Entrega</h2>
-        <form id="entrega-form" onsubmit="enviarPedido(event)">
-            <input type="text" placeholder="Nome" required>
-            <input type="text" placeholder="Bairro" required>
-            <input type="text" placeholder="Número" required>
-            <input type="text" placeholder="Rua" required>
-            <input type="text" placeholder="Referência" required>
-            <select id="forma-pagamento" onchange="mostrarCamposPagamento()" required>
-                <option value="" disabled selected>Selecione a forma de pagamento</option>
-                <option value="dinheiro">Dinheiro</option>
-                <option value="pix">PIX</option>
-                <option value="cartao">Cartão</option>
-            </select>
-            <div id="campo-troco" style="display: none;">
-                <input type="number" id="valor-pagamento" placeholder="Valor para Troco">
-                <p id="troco" style="color: red;"></p>
-            </div>
-            <div id="chave-pix" style="display: none;">
-                <p>Chave PIX: 27997294468</p>
-            </div>
-            <button type="submit">Enviar Pedido</button>
-        </form>
-    </section>
-
-    <!-- Formulário de Contato -->
-    <section id="contato" class="contato">
-        <h2>Entre em Contato</h2>
-        <form id="form-contato">
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="E-mail" required>
-            <textarea placeholder="Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <!-- Rodapé com Redes Sociais -->
-    <footer>
-        <p>&copy; 2024 Tempero da Duda. Todos os direitos reservados.</p>
-        <p>
-            <a href="https://www.facebook.com/seu-perfil" target="_blank">Facebook</a> |
-            <a href="https://www.instagram.com/seu-perfil" target="_blank">Instagram</a> |
-            <a href="https://wa.me/27997294468" target="_blank">WhatsApp</a>
-        </p>
-    </footer>
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="text" id="telefone" placeholder="Telefone" required>
+        <input type="text" id="rua" placeholder="Rua" required>
+        <input type="text" id="numero" placeholder="Número" required>
+        <input type="text" id="bairro" placeholder="Bairro" required>
+        <input type="text" id="cidade" placeholder="Cidade" required>
+        <input type="text" id="estado" placeholder="Estado" required>
+        <input type="text" id="troco" placeholder="Precisa de troco? (Sim/Não)" required>
+        <button onclick="enviarPedido()">Enviar Pedido</button>
+    </div>
 
     <script>
         let totalCarrinho = 0;
-        let listaItens = ""; // Variável para armazenar os itens do carrinho
-        const taxaFrete = 4.00;
-        const freteGratuito = 60.00; // Frete grátis a partir de R$60
+        let listaItens = '';
 
-        function adicionarAoCarrinho(produto, preco) {
+        function adicionarAoCarrinho(nome, preco) {
             totalCarrinho += preco;
-            listaItens += `${produto} - R$${preco.toFixed(2)}\n`; // Armazena os itens e preços no carrinho
-            document.getElementById('lista-carrinho').innerHTML += `<li>${produto} - R$${preco.toFixed(2)}</li>`;
-            atualizarTotal();
-        }
-
-        function atualizarTotal() {
-            let frete = totalCarrinho >= freteGratuito ? 0 : taxaFrete; // Frete grátis acima de R$60
-            const totalComFrete = totalCarrinho + frete;
+            listaItens += `${nome} - R$ ${preco.toFixed(2)}\n`;
+            document.getElementById('lista-carrinho').innerText = listaItens;
             document.getElementById('total-carrinho').innerText = totalCarrinho.toFixed(2);
-            document.getElementById('frete').innerText = frete.toFixed(2);
-            document.getElementById('valor-final').innerText = totalComFrete.toFixed(2);
         }
 
         function finalizarCompra() {
-            document.getElementById('form-entrega').style.display = 'block'; // Exibe o formulário de entrega
-        }
-
-        function mostrarCamposPagamento() {
-            const formaPagamento = document.getElementById('forma-pagamento').value;
-            document.getElementById('chave-pix').style.display = formaPagamento === 'pix' ? 'block' : 'none';
-            document.getElementById('campo-troco').style.display = formaPagamento === 'dinheiro' ? 'block' : 'none';
-        }
-
-        function calcularTroco() {
-            const valorPagamento = parseFloat(document.getElementById('valor-pagamento').value);
-            const valorFinal = parseFloat(document.getElementById('valor-final').innerText);
-
-            if (valorPagamento && valorPagamento > valorFinal) {
-                const troco = valorPagamento - valorFinal;
-                document.getElementById('troco').innerText = `Troco: R$${troco.toFixed(2)}`;
+            if (totalCarrinho > 0) {
+                document.getElementById('form-entrega').style.display = 'block';
             } else {
-                document.getElementById('troco').innerText = '';
+                alert('Adicione um produto ao carrinho antes de finalizar.');
             }
         }
 
-        document.getElementById('valor-pagamento').addEventListener('input', calcularTroco);
+        function enviarPedido() {
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const rua = document.getElementById('rua').value;
+            const numero = document.getElementById('numero').value;
+            const bairro = document.getElementById('bairro').value;
+            const cidade = document.getElementById('cidade').value;
+            const estado = document.getElementById('estado').value;
+            const troco = document.getElementById('troco').value;
 
-        function enviarPedido(event) {
-            event.preventDefault();
+            const mensagem = `
+                Pedido de Batatas Gourmet:
+                Nome: ${nome}
+                Telefone: ${telefone}
+                Endereço: ${rua}, ${numero}, ${bairro}, ${cidade} - ${estado}
+                Precisa de troco: ${troco}
+                Itens do carrinho:
+                ${listaItens}
+                Total: R$ ${totalCarrinho.toFixed(2)}
+            `;
 
-            const nome = document.querySelector('#entrega-form input[placeholder="Nome"]').value;
-            const bairro = document.querySelector('#entrega-form input[placeholder="Bairro"]').value;
-            const numero = document.querySelector('#entrega-form input[placeholder="Número"]').value;
-            const rua = document.querySelector('#entrega-form input[placeholder="Rua"]').value;
-            const referencia = document.querySelector('#entrega-form input[placeholder="Referência"]').value;
-            const formaPagamento = document.getElementById('forma-pagamento').value;
-            let mensagemPedido = `Pedido de ${nome}\nEndereço: Rua ${rua}, Nº ${numero}, Bairro ${bairro}, Referência: ${referencia}\nForma de pagamento: ${formaPagamento}\nItens:\n${listaItens}Total: R$${totalCarrinho.toFixed(2)}\nFrete: R$${(totalCarrinho >= freteGratuito ? 0 : taxaFrete).toFixed(2)}\nValor Final: R$${(totalCarrinho + (totalCarrinho >= freteGratuito ? 0 : taxaFrete)).toFixed(2)}`;
+            // Codifica a mensagem para a URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=27999595386&text=${mensagemCodificada}`;
 
-            if (formaPagamento === 'dinheiro') {
-                const valorPagamento = parseFloat(document.getElementById('valor-pagamento').value);
-                const troco = valorPagamento - (totalCarrinho + (totalCarrinho >= freteGratuito ? 0 : taxaFrete));
-                mensagemPedido += `\nValor pago: R$${valorPagamento.toFixed(2)}\nTroco: R$${troco.toFixed(2)}`;
-            }
+            // Redireciona para o WhatsApp
+            window.open(whatsappUrl, '_blank');
 
-            const numeroWhatsapp = "5527999595386";
-            const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagemPedido)}`;
-            window.open(urlWhatsapp, '_blank');
+            // Reseta o carrinho e o formulário
+            totalCarrinho = 0;
+            listaItens = '';
+            document.getElementById('lista-carrinho').innerText = '';
+            document.getElementById('total-carrinho').innerText = '0.00';
+            document.getElementById('form-entrega').style.display = 'none';
+            document.getElementById('nome').value = '';
+            document.getElementById('telefone').value = '';
+            document.getElementById('rua').value = '';
+            document.getElementById('numero').value = '';
+            document.getElementById('bairro').value = '';
+            document.getElementById('cidade').value = '';
+            document.getElementById('estado').value = '';
+            document.getElementById('troco').value = '';
         }
     </script>
 </body>
